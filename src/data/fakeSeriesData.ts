@@ -1,34 +1,6 @@
-export type Contributor = {
-  name: string;
-  initials: string;
-  slug: string;
-  image?: string;
-};
+import type { Contributor, Series } from "@/types/series";
 
-export type Series = {
-  id: number;
-  uuid: string;
-  title: string;
-  slug: string;
-  description: string;
-  tags: string[];
-  isFavorite: boolean;
-  url: string;
-  image: string;
-  contributors: Contributor[];
-  startedTotalUsersCount: number;
-  completedTotalUsersCount: number;
-  progress: number;
-  lastUpdate: string;
-  cardsTotalCount: number;
-  cardsObtainedCount: number;
-  modulesTotalCount: number;
-  modulesCompletedCount: number;
-  ressourcesTotalCount: number;
-  ressourcesObtainedCount: number;
-  timelineTotalCount: number;
-  timelineObtainedCount: number;
-};
+export type { Contributor, Series };
 
 export const fakeSeriesData: Series[] = [
   {
@@ -41,7 +13,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Espace"],
     isFavorite: true,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/space.png",
     contributors: [
       {
         name: "Arte",
@@ -85,7 +57,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Histoire", "France"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/history.png",
     contributors: [
       {
         name: "Arte",
@@ -129,7 +101,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Biologie"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/nature.png",
     contributors: [
       {
         name: "Arte",
@@ -173,7 +145,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Informatique"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/tech.png",
     contributors: [
       {
         name: "Arte",
@@ -217,7 +189,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Geo", "France"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/geo.png",
     contributors: [
       {
         name: "Arte",
@@ -261,7 +233,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Geo", "Japon"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/geo.png",
     contributors: [
       {
         name: "Arte",
@@ -305,7 +277,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Paléonthologie"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/nature.png",
     contributors: [
       {
         name: "Arte",
@@ -349,7 +321,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Informatique", "Internet", "Datas"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/tech.png",
     contributors: [
       {
         name: "Arte",
@@ -393,7 +365,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Informatique", "Internet", "Datas"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/tech.png",
     contributors: [
       {
         name: "Arte",
@@ -437,7 +409,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Physique", "Chimie"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/science.png",
     contributors: [
       {
         name: "Arte",
@@ -481,7 +453,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Sciences", "Astronomie"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/space.png",
     contributors: [
       {
         name: "Astro Club",
@@ -519,7 +491,7 @@ export const fakeSeriesData: Series[] = [
     tags: ["Histoire", "Carto"],
     isFavorite: false,
     url: "/",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/covers/geo.png",
     contributors: [
       {
         name: "Nota Bene",
