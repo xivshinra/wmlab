@@ -6,6 +6,7 @@ type TimelineItem = {
   tags: string[];
   category: "personnage" | "bataille" | "politique" | "culture";
   image: string;
+  status: "locked" | "unlocked" | "completed";
 };
 
 export const timelineDatas: TimelineItem[] = [
@@ -18,6 +19,7 @@ export const timelineDatas: TimelineItem[] = [
     tags: ["Royaume"],
     category: "personnage",
     image: "/assets/images/placeholder.jpg",
+    status: "completed",
   },
   {
     id: "2",
@@ -28,6 +30,7 @@ export const timelineDatas: TimelineItem[] = [
     tags: ["Militaire"],
     category: "bataille",
     image: "/assets/images/placeholder.jpg",
+    status: "locked",
   },
   {
     id: "3",
@@ -38,6 +41,7 @@ export const timelineDatas: TimelineItem[] = [
     tags: ["Empire"],
     category: "personnage",
     image: "/assets/images/placeholder.jpg",
+    status: "locked",
   },
   {
     id: "4",
@@ -48,6 +52,7 @@ export const timelineDatas: TimelineItem[] = [
     tags: ["République"],
     category: "politique",
     image: "/assets/images/placeholder.jpg",
+    status: "unlocked",
   },
   {
     id: "5",
@@ -58,5 +63,6 @@ export const timelineDatas: TimelineItem[] = [
     tags: ["Art"],
     category: "culture",
     image: "/assets/images/placeholder.jpg",
+    status: "locked",
   },
 ];

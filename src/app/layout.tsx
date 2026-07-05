@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Nunito_Sans } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import AppNavbar from "@/components/AppNavbar";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title:
@@ -32,14 +23,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        "h-full",
-        "antialiased",
-        geistSans.variable,
-        geistMono.variable,
-        "font-sans",
-        nunitoSans.variable,
-      )}
+      className={cn("h-full", "antialiased", "font-sans", nunitoSans.variable)}
       suppressHydrationWarning
     >
       <body>
@@ -49,7 +33,8 @@ export default function RootLayout({
           enableSystem
         >
           <TooltipProvider>
-            <main className="p-4 lg:p-8 space-y-4 lg:space-y-8 max-w-5xl mx-auto">
+            <AppNavbar />
+            <main className="p-4 space-y-4 lg:space-y-8 max-w-6xl mx-auto">
               {children}
             </main>
           </TooltipProvider>
