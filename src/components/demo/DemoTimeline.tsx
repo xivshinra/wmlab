@@ -46,25 +46,24 @@ const STATUS_CONFIGS = {
   locked: {
     icon: Lock,
     text: "Verrouillé",
-    badgeClass:
-      "bg-muted/20 text-muted-foreground/50 border-muted-foreground/10",
+    badgeClass: "text-muted-foreground/50 border-muted-foreground/10",
     dotClass: "bg-muted-foreground/20 ring-background/50 scale-75 opacity-50",
     cardClass:
-      "opacity-100 grayscale-0 bg-muted/10 border-dashed border-2 border-border/30 shadow-none scale-[0.98] pb-0",
+      "grayscale-0 bg-destructive/10 text-destructive-foreground border-dashed border-2 border-destructive/30 shadow-none scale-[0.98] pb-0",
   },
   completed: {
     icon: Check,
     text: "Terminé",
-    badgeClass: "bg-primary/10 text-primary border-primary/20",
+    badgeClass: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
     dotClass:
-      "bg-primary shadow-[0_0_30px_rgba(var(--primary),0.8)] ring-primary/20 animate-pulse scale-110",
+      "bg-emerald-500 shadow-[0_0_30px_rgba(var(--emerald-500),0.8)] ring-emerald-500/20 animate-pulse scale-110",
     cardClass:
-      "ring-2 ring-primary/20 ring-offset-4 ring-offset-background shadow-xl shadow-primary/5 bg-card/95",
+      "ring-2 ring-emerald-500/20 ring-offset-4 ring-offset-background shadow-xl shadow-emerald-500/5 bg-card/95",
   },
   unlocked: {
-    icon: Sparkles,
+    icon: Check,
     text: "Disponible",
-    badgeClass: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
+    badgeClass: "bg-primary/10 text-primary border-primary/20",
     dotClass:
       "bg-primary shadow-[0_0_15px_rgba(var(--primary),0.6)] ring-background hover:scale-150 transition-all duration-700",
     cardClass:
@@ -121,6 +120,7 @@ function TimelineCard({ item, index }: { item: TimelineItem; index: number }) {
               alt=""
               width={800}
               height={450}
+              sizes="(max-width: 768px) 100vw, 70vw"
               className="object-cover w-full h-full transition-transform duration-2500 ease-out group-hover:scale-115"
               priority={index < 2}
             />
@@ -138,16 +138,17 @@ function TimelineCard({ item, index }: { item: TimelineItem; index: number }) {
             </div>
           </Link>
         ) : (
-          <div className="relative w-full h-full grayscale opacity-100">
+          <div className="relative w-full h-full grayscale-0">
             <Image
               src={item.image}
               alt=""
               width={800}
               height={450}
-              className="object-cover w-full h-full brightness-[0.15]"
+              sizes="(max-width: 768px) 100vw, 70vw"
+              className="object-cover w-full h-full"
               priority={index < 2}
             />
-            <div className="absolute inset-0 backdrop-blur-[1px]" />
+            <div className="absolute inset-0 bg-destructive/20 backdrop-blur-[1px]" />
             {/* Date display hidden for locked cards */}
           </div>
         )}
@@ -162,12 +163,13 @@ function TimelineCard({ item, index }: { item: TimelineItem; index: number }) {
         {isLocked && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="flex flex-col items-center gap-4 group/lock transition-all duration-700">
-              <div className="p-6 rounded-full bg-black/50 ring-1 ring-white/10 backdrop-blur-xl group-hover/lock:scale-110 transition-all duration-700 shadow-2xl">
-                <Lock className="size-10 text-white/20 group-hover/lock:text-white/60 transition-colors" />
+              <div className="p-6 rounded-full bg-destructive/80 text-destructive-foreground ring-1 ring-destructive/20 backdrop-blur-xl group-hover/lock:scale-105 transition-all duration-700 shadow">
+                <Lock className="size-10 text-destructive-foreground transition-colors" />
               </div>
-              <span className="text-white/20 font-black uppercase tracking-[0.4em] text-[10px] group-hover/lock:text-white/50">
-                Contenu Verrouillé
+              <span className="text-destructive-foreground bg-destructive/80 p-2 font-black uppercase tracking-[0.3em] text-[10px]">
+                Vérrouillé (250 pièces)
               </span>
+              <span className="text-destructive font-black">Ou 1375 XP</span>
             </div>
           </div>
         )}
@@ -482,7 +484,7 @@ export default function DemoTimeline() {
       </div>
 
       {/* TIMELINE ARCHITECTURE - No line, no dots */}
-      <div className="relative space-y-16 md:space-y-32">
+      <div className="container mx-auto relative space-y-16 md:space-y-32">
         {filteredData.map((item, index) => {
           const isLeft = index % 2 === 0;
 

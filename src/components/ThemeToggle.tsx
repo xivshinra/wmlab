@@ -13,13 +13,18 @@ export function ThemeToggle() {
   React.useEffect(() => setMounted(true), []);
 
   const isDark = resolvedTheme === "dark";
+  const label = mounted
+    ? isDark
+      ? "Activer le thème clair"
+      : "Activer le thème sombre"
+    : "Changer le thème";
 
   return (
     <Button
       type="button"
       variant="ghost"
       size="icon-sm"
-      aria-label={isDark ? "Activer le thème clair" : "Activer le thème sombre"}
+      aria-label={label}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="rounded-full"
     >
