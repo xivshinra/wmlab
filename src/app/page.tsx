@@ -1,15 +1,15 @@
-// IMPORTS
+import { BoosterSection } from "@/components/home/BoosterSection";
+import { HeroSection } from "@/components/home/HeroSection";
+import { NewSeriesSection } from "@/components/home/NewSeriesSection";
+import { PartnersSection } from "@/components/home/PartnersSection";
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-
-// COMPONENT
 export default function Home() {
   return (
-    <div className="flex gap-4">
-      <Button asChild>
-        <Link href="/demo/timeline">Demo Timeline</Link>
-      </Button>
-    </div>
+    <>
+      <HeroSection />
+      <NewSeriesSection />
+      <BoosterSection />
+      <PartnersSection />
+    </>
   );
 }
