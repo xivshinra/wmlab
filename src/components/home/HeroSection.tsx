@@ -19,7 +19,7 @@ export function HeroSection() {
         <div className="flex flex-col items-start gap-6">
           <Badge
             variant="secondary"
-            className="rounded-full px-3 py-1 text-xs font-bold"
+            className="rounded-full px-3 py-1 text-xs font-bold text-foreground/90"
           >
             <Sparkles className="size-3.5" />
             Apprendre en collectionnant
@@ -82,7 +82,7 @@ export function HeroSection() {
             alt="Une collection de cartes de savoir illustrant divers sujets"
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizes="(max-width: 1024px) 100vw, 45vw"
             className="object-cover"
           />
         </div>

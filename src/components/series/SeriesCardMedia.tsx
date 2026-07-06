@@ -34,7 +34,7 @@ export function SeriesCardMedia({
           src={series.image}
           alt={`Illustration de la série ${series.title}`}
           fill
-          sizes="(max-width: 768px) 100vw, 40vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           priority={priority}
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />

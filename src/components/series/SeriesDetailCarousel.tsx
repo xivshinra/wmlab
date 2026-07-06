@@ -72,7 +72,7 @@ export function SeriesDetailCarousel({ series }: SeriesDetailCarouselProps) {
         }}
         className="swiper h-[85vh] w-full rounded-none"
       >
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <SwiperSlide
             key={slide.key}
             className="relative h-full w-full overflow-hidden rounded-none"
@@ -82,8 +82,9 @@ export function SeriesDetailCarousel({ series }: SeriesDetailCarouselProps) {
                 src={slide.image}
                 alt={slide.topText}
                 fill
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 85vw"
                 className="object-cover rounded-none"
+                priority={index === 0}
               />
               <div className="absolute inset-0 bg-black/35" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_28%)] pointer-events-none" />

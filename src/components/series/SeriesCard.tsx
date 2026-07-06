@@ -55,14 +55,14 @@ export function SeriesCard({ series, priority = false }: SeriesCardProps) {
         </CardDescription>
       </CardContent>
 
-      <CardFooter className="flex items-center justify-between gap-4 border-t border-primary/5 bg-muted/20 px-6 py-6 transition-colors group-hover:bg-primary/5 md:px-8">
+      <CardFooter className="flex items-center justify-between gap-4 border-t border-primary/5 bg-muted/30 px-6 py-6 transition-colors group-hover:bg-primary/5 dark:bg-muted/20 md:px-8">
         <SeriesCardContributors series={series} />
         <div className="hidden gap-2 sm:flex">
           {series.tags.slice(1, 3).map((tag) => (
             <Badge
               key={tag}
               variant="outline"
-              className="h-6 rounded-full px-3 text-[10px] font-bold tracking-wider uppercase opacity-60 transition-opacity hover:opacity-100"
+              className="h-6 rounded-full px-3 text-[10px] font-bold tracking-wider uppercase opacity-70 transition-opacity hover:opacity-100"
             >
               {tag}
             </Badge>

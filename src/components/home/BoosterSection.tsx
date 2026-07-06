@@ -49,7 +49,9 @@ export function BoosterSection() {
                     Offert, chaque jour
                   </p>
                 </div>
-                <Badge className="ml-auto rounded-full font-bold">Gratuit</Badge>
+                <Badge className="ml-auto rounded-full font-bold">
+                  Gratuit
+                </Badge>
               </div>
 
               <p className="text-muted-foreground leading-relaxed text-pretty">
@@ -58,7 +60,11 @@ export function BoosterSection() {
               </p>
 
               <div className="mt-auto">
-                <Button asChild size="lg" className="w-full rounded-full font-bold">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full rounded-full font-bold"
+                >
                   <Link href="/shop">
                     <Gift className="size-4" />
                     Récupérer mon booster gratuit
@@ -69,13 +75,13 @@ export function BoosterSection() {
           </Card>
 
           {/* Premium booster */}
-          <Card className="relative overflow-hidden border-none bg-primary text-primary-foreground ring-1 ring-primary">
+          <Card className="relative overflow-hidden border-none bg-primary text-primary-foreground ring-1 ring-primary shadow-sm">
             <div className="pointer-events-none absolute -top-8 -right-8 size-40 opacity-90">
               <Image
                 src="/assets/images/booster.png"
-                alt=""
+                alt="Illustration d’un booster premium"
                 fill
-                sizes="160px"
+                sizes="(max-width: 768px) 160px, 220px"
                 className="object-contain"
               />
             </div>
@@ -96,7 +102,10 @@ export function BoosterSection() {
 
               <ul className="flex flex-col gap-2.5">
                 {PAID_PERKS.map((perk) => (
-                  <li key={perk} className="flex items-start gap-2.5 text-sm">
+                  <li
+                    key={perk}
+                    className="flex items-start gap-2.5 text-sm"
+                  >
                     <Check className="mt-0.5 size-4 shrink-0" />
                     <span className="text-pretty">{perk}</span>
                   </li>

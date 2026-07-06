@@ -26,7 +26,7 @@ export function ThemeToggle() {
       size="icon-sm"
       aria-label={label}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="rounded-full"
+      className="rounded-full focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
     >
       {mounted && isDark ? (
         <Sun className="size-4" />

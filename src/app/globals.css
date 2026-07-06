@@ -152,6 +152,11 @@ body {
   min-height: 100vh;
 }
 
+::selection {
+  background-color: color-mix(in srgb, var(--primary) 30%, transparent);
+  color: var(--foreground);
+}
+
 .swiper {
   --swiper-navigation-size: 2.4rem;
   --swiper-navigation-color: #ffffff;
