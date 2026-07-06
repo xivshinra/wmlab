@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SERIES_BASE_PATH } from "@/lib/navigation";
 
 const HERO_STATS = [
   { value: "12+", label: "Séries" },
@@ -35,8 +36,12 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="rounded-full font-bold">
-              <Link href="/series">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full font-bold"
+            >
+              <Link href={SERIES_BASE_PATH}>
                 Explorer les séries
                 <ArrowRight className="size-4" />
               </Link>
@@ -56,7 +61,10 @@ export function HeroSection() {
 
           <dl className="mt-4 flex flex-wrap gap-x-8 gap-y-4">
             {HERO_STATS.map((stat) => (
-              <div key={stat.label} className="flex flex-col">
+              <div
+                key={stat.label}
+                className="flex flex-col"
+              >
                 <dt className="order-2 text-xs font-medium text-muted-foreground uppercase tracking-wide">
                   {stat.label}
                 </dt>

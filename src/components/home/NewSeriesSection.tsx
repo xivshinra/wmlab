@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import { SeriesCardGrid } from "@/components/series/SeriesCardGrid";
 import { Button } from "@/components/ui/button";
+import { SERIES_BASE_PATH } from "@/lib/navigation";
 import { getNewSeries } from "@/lib/series";
 
 export function NewSeriesSection() {
@@ -19,15 +20,22 @@ export function NewSeriesSection() {
             Les nouvelles séries
           </h2>
         </div>
-        <Button asChild variant="ghost" className="rounded-full font-semibold">
-          <Link href="/series">
+        <Button
+          asChild
+          variant="ghost"
+          className="rounded-full font-semibold"
+        >
+          <Link href={SERIES_BASE_PATH}>
             Voir tout
             <ArrowRight className="size-4" />
           </Link>
         </Button>
       </div>
 
-      <SeriesCardGrid series={series} priorityCount={2} />
+      <SeriesCardGrid
+        series={series}
+        priorityCount={2}
+      />
     </section>
   );
 }

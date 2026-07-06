@@ -8,6 +8,7 @@ type ThemeProviderProps = {
   children: React.ReactNode;
   defaultTheme?: ThemeOption;
   enableSystem?: boolean;
+  attribute?: string;
 };
 
 type ThemeContextValue = {
@@ -53,6 +54,7 @@ export function ThemeProvider({
   children,
   defaultTheme = "system",
   enableSystem = true,
+  attribute,
 }: ThemeProviderProps) {
   const [theme, setThemeState] = React.useState<ThemeOption>(defaultTheme);
   const [resolvedTheme, setResolvedTheme] = React.useState<"light" | "dark">(

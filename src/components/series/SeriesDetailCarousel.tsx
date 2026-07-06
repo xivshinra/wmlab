@@ -88,7 +88,7 @@ export function SeriesDetailCarousel({ series }: SeriesDetailCarouselProps) {
               <div className="absolute inset-0 bg-black/35" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_28%)] pointer-events-none" />
 
-              <div className="absolute inset-x-0 bottom-0 z-20 rounded-t-[2rem] bg-gradient-to-t from-slate-950/95 to-transparent p-8 text-white">
+              <div className="absolute inset-x-0 bottom-0 z-20 rounded-t-[2rem] bg-linear-to-t from-slate-950/95 to-transparent p-8 text-white">
                 <span className="block text-sm uppercase tracking-[0.35em] text-slate-300">
                   {slide.topText}
                 </span>
@@ -106,7 +106,7 @@ export function SeriesDetailCarousel({ series }: SeriesDetailCarouselProps) {
       {isPixelizing ? (
         <div className="pointer-events-none absolute inset-0 z-30 bg-black/10 backdrop-blur-sm">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_25%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[length:10px_10px] opacity-80" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] bg-size:10px_10px opacity-80" />
         </div>
       ) : null}
     </section>

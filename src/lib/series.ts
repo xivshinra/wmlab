@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { fakeSeriesData } from "@/data/fakeSeriesData";
+import { getSeriesPath } from "@/lib/navigation";
 import type { Series } from "@/types/series";
 
 /* -------------------------------------------------------------------------- */
@@ -42,7 +43,7 @@ export const SERIES_MENU_ENTRIES: SeriesMenuEntry[] = [
     key: "modules",
     label: "Modules",
     icon: BookOpen,
-    href: (s) => `/series/${s.slug}`,
+    href: (s) => getSeriesPath(s.slug),
     counter: (s) => ({
       current: s.modulesCompletedCount,
       total: s.modulesTotalCount,
@@ -82,7 +83,7 @@ export const SERIES_MENU_ENTRIES: SeriesMenuEntry[] = [
     key: "stats",
     label: "Statistiques",
     icon: BarChart3,
-    href: (s) => `/series/${s.slug}/stats`,
+    href: (s) => getSeriesPath(s.slug, "/stats"),
   },
 ];
 

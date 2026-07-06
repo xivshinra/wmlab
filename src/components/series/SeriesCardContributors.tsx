@@ -16,6 +16,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { getSeriesPath } from "@/lib/navigation";
 import type { Series } from "@/types/series";
 
 const FALLBACK_IMAGE = "/assets/images/placeholder.jpg";
@@ -104,7 +105,7 @@ export function SeriesCardContributors({ series }: { series: Series }) {
               size="sm"
               className="px-2"
             >
-              <Link href={`/series/${series.slug}`}>En savoir plus</Link>
+              <Link href={getSeriesPath(series.slug)}>En savoir plus</Link>
             </Button>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { getSeriesPath } from "@/lib/navigation";
 import type { Series } from "@/types/series";
 
 import { SeriesFavoriteButton } from "./SeriesFavoriteButton";
@@ -26,7 +27,7 @@ export function SeriesCardMedia({
       />
 
       <Link
-        href={`/series/${series.slug}`}
+        href={getSeriesPath(series.slug)}
         className="relative block aspect-video w-full overflow-hidden"
       >
         <Image

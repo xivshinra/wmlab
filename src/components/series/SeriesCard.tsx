@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/card";
 import type { Series } from "@/types/series";
 
+import { getSeriesPath } from "@/lib/navigation";
+
 import { SeriesCardContributors } from "./SeriesCardContributors";
 import { SeriesCardMedia } from "./SeriesCardMedia";
 import { SeriesCardMenu } from "./SeriesCardMenu";
@@ -34,7 +36,7 @@ export function SeriesCard({ series, priority = false }: SeriesCardProps) {
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1 space-y-3">
             <Link
-              href={`/series/${series.slug}`}
+              href={getSeriesPath(series.slug)}
               className="block"
             >
               <CardTitle className="text-lg font-black leading-tight tracking-tighter text-balance md:text-xl lg:text-2xl">
