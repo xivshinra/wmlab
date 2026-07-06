@@ -42,7 +42,7 @@ export const SERIES_MENU_ENTRIES: SeriesMenuEntry[] = [
     key: "modules",
     label: "Modules",
     icon: BookOpen,
-    href: (s) => `/serie/${s.slug}`,
+    href: (s) => `/series/${s.slug}`,
     counter: (s) => ({
       current: s.modulesCompletedCount,
       total: s.modulesTotalCount,
@@ -82,7 +82,7 @@ export const SERIES_MENU_ENTRIES: SeriesMenuEntry[] = [
     key: "stats",
     label: "Statistiques",
     icon: BarChart3,
-    href: (s) => `/serie/${s.slug}/stats`,
+    href: (s) => `/series/${s.slug}/stats`,
   },
 ];
 
@@ -147,6 +147,10 @@ export function getPopularSeries(limit = 3): Series[] {
   return [...fakeSeriesData]
     .sort((a, b) => b.startedTotalUsersCount - a.startedTotalUsersCount)
     .slice(0, limit);
+}
+
+export function getSeriesBySlug(slug: string): Series | undefined {
+  return getAllSeries().find((series) => series.slug === slug);
 }
 
 /** Unique contributors across every series (for partners / social proof). */

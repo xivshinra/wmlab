@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "swiper/css";
+@import "swiper/css/effect-creative";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -135,4 +139,62 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+html,
+body,
+#__next {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.swiper {
+  --swiper-navigation-size: 2.4rem;
+  --swiper-navigation-color: #ffffff;
+  --swiper-pagination-color: rgba(255, 255, 255, 0.95);
+  height: 100% !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+.swiper-wrapper,
+.swiper-slide {
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+.swiper-slide > div {
+  height: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0.9;
+  transition: opacity 0.25s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+}
+
+.swiper-slide {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(255, 255, 255, 0.16),
+    transparent 35%
+  );
+  pointer-events: none;
 }

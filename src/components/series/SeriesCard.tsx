@@ -25,12 +25,18 @@ type SeriesCardProps = {
 export function SeriesCard({ series, priority = false }: SeriesCardProps) {
   return (
     <Card className="group relative flex flex-col overflow-hidden border-none pt-0 shadow-sm ring-1 ring-border transition-all duration-500 hover:shadow-2xl hover:ring-primary/40">
-      <SeriesCardMedia series={series} priority={priority} />
+      <SeriesCardMedia
+        series={series}
+        priority={priority}
+      />
 
       <CardHeader className="p-6 pb-4 md:p-8 md:pb-4">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1 space-y-3">
-            <Link href={`/serie/${series.slug}`} className="block">
+            <Link
+              href={`/series/${series.slug}`}
+              className="block"
+            >
               <CardTitle className="text-lg font-black leading-tight tracking-tighter text-balance md:text-xl lg:text-2xl">
                 {series.title}
               </CardTitle>

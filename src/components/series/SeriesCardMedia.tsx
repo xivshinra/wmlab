@@ -13,7 +13,10 @@ type SeriesCardMediaProps = {
   priority?: boolean;
 };
 
-export function SeriesCardMedia({ series, priority = false }: SeriesCardMediaProps) {
+export function SeriesCardMedia({
+  series,
+  priority = false,
+}: SeriesCardMediaProps) {
   return (
     <div className="relative">
       <SeriesFavoriteButton
@@ -23,7 +26,7 @@ export function SeriesCardMedia({ series, priority = false }: SeriesCardMediaPro
       />
 
       <Link
-        href={`/serie/${series.slug}`}
+        href={`/series/${series.slug}`}
         className="relative block aspect-video w-full overflow-hidden"
       >
         <Image
@@ -64,10 +67,16 @@ export function SeriesCardMedia({ series, priority = false }: SeriesCardMediaPro
               </p>
             </div>
             <div className="rounded-full border border-white/10 bg-white/10 p-2 backdrop-blur-xl transition-colors group-hover:border-primary group-hover:bg-primary">
-              <ArrowRight aria-hidden className="size-5 text-white" />
+              <ArrowRight
+                aria-hidden
+                className="size-5 text-white"
+              />
             </div>
           </div>
-          <Progress value={series.progress} className="h-1.5 bg-white/10" />
+          <Progress
+            value={series.progress}
+            className="h-1.5 bg-white/10"
+          />
         </div>
       </Link>
     </div>
