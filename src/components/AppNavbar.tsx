@@ -48,7 +48,7 @@ export default function AppNavbar() {
                 className={cn(
                   "rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                   isActive(link.href)
-                    ? "text-primary"
+                    ? "text-indigo-400"
                     : "text-muted-foreground",
                 )}
               >
